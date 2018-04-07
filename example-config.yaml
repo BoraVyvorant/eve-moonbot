@@ -1,0 +1,35 @@
+#
+# EXAMPLE configuration for moonbot, with secrets redacted.
+#
+
+#
+# Configuration for Slack notifications.
+#
+:slack:
+  :webhook_url: 'REDACTED'
+  :defaults:
+    :channel: 'REDACTED'
+    :username: 'moonbot'
+    :icon_emoji: ':first_quarter_moon_with_face:'
+
+:refresh_token: 'REDACTED'
+
+:client_id: 'REDACTED'
+:client_secret: 'REDACTED'
+
+#
+# Manually maintained list of what's interesting at each moon.
+# If a moon isn't found here, the bot will use 'Unknown.' instead.
+#
+:minerals:
+  'Boystin II - Moon 3': 'Coesite, Hemorphite, Crokite and Spodumain.'
+  'Boystin V - Moon 1': 'Bitumens, Scordite and Arkonor.'
+  'Boystin V - Moon 2': 'Coesite, Hemorphite, Ochre and Bistot.'
+  'Boystin V - Moon 5': 'Zeolites, Hedbergite, Gneiss and Bistot.'
+  'Boystin V - Moon 8': 'Coesite, Kernite and Bistot.'
+  'Boystin VI - Moon 7': 'Zeolites, Spodumain and Arkonor.'
+
+#
+# Restrict listings to specific named systems.
+#
+:systems: [Boystin]
