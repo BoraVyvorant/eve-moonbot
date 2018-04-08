@@ -1,4 +1,4 @@
-# EVE moonbot
+# EVE MoonBot
 
 This Ruby application can be used to notify Slack channels of the upcoming
 availability of moon mining belts created by a corporation's refineries.
@@ -66,4 +66,4 @@ $ bundle exec ruby moonbot.rb
 
 Over in Slack, you might see something like this:
 
-![Slack notification from moonbot](moonbot.png)
+![Slack notification from MoonBot](moonbot.png)

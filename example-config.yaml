@@ -1,5 +1,5 @@
 #
-# EXAMPLE configuration for moonbot, with secrets redacted.
+# EXAMPLE configuration for MoonBot, with secrets redacted.
 #
 
 #
@@ -9,7 +9,7 @@
   :webhook_url: 'REDACTED'
   :defaults:
     :channel: 'REDACTED'
-    :username: 'moonbot'
+    :username: 'MoonBot'
     :icon_emoji: ':first_quarter_moon_with_face:'
 
 :refresh_token: 'REDACTED'
