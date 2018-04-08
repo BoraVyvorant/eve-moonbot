@@ -64,12 +64,19 @@ if (days = config[:days])
   extractions.delete_if { |ex| (ex.chunk_arrival_time - DateTime.now) > days }
 end
 
-# Remove any extractions which aren't in the listed systems.
-system_names = universe_api.post_universe_ids(config[:systems]).systems
-system_ids = Set.new(system_names.map(&:id))
-extractions.delete_if do |ex|
-  structure = structures.detect { |s| s.structure_id == ex.structure_id }
-  !system_ids.include?(structure.system_id)
+#
+# If a list of system names has been configured, remove any extractions
+# taking place outside those systems.
+#
+if config[:systems]
+  # Make a set of IDs for the named systems
+  systems = universe_api.post_universe_ids(config[:systems]).systems
+  system_ids = Set.new(systems.map(&:id))
+  # Delete extractions in systems not included in that set
+  extractions.delete_if do |ex|
+    structure = structures.detect { |s| s.structure_id == ex.structure_id }
+    !system_ids.include?(structure.system_id)
+  end
 end
 
 # Sort by arrival time

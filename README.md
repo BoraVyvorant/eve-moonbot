@@ -30,8 +30,9 @@ The resulting refresh token goes into the
 
 ### Mining Configuration
 
-The `systems` configuration item is a list of solar system names; the
-application will filter out any extractions happening in other systems.
+If present, the `systems` configuration item is a list of solar system names;
+the application will filter out any extractions happening in other systems.
+If `systems` is absent, all systems will be included.
 
 The `minerals` item gives you somewhere to put a list of the minerals resulting
 from the operation. It's impossible to get this information from the API

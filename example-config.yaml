@@ -37,6 +37,7 @@
   'Boystin VI - Moon 7': 'Zeolites, Spodumain and Arkonor.'
 
 #
-# Restrict listings to specific named systems.
+# Restrict listings to specific named systems. If this configuration item is
+# commented out or removed, extractions in all systems will be included.
 #
 :systems: [Boystin]
