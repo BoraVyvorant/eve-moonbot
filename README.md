@@ -67,10 +67,3 @@ $ bundle exec ruby moonbot.rb
 Over in Slack, you might see something like this:
 
 ![Slack notification from moonbot](moonbot.png)
-
-## Future Plans
-
-I'm looking into setting notifications automatically, if Slack allows for that.
-
-For my own deployment, I am going to use Docker and once that is done I will
-add appropriate support here.
