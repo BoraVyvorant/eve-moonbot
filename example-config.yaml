@@ -18,6 +18,13 @@
 :client_secret: 'REDACTED'
 
 #
+# The number of days within which a future extraction has to occur
+# to be notified. If this configuration item is commented out or removed,
+# all extractions will be included.
+#
+:days: 6.0
+
+#
 # Manually maintained list of what's interesting at each moon.
 # If a moon isn't found here, the bot will use 'Unknown.' instead.
 #

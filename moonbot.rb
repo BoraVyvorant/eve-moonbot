@@ -56,8 +56,13 @@ structures = corporation_api.get_corporations_corporation_id_structures(corporat
 #
 extractions = industry_api.get_corporation_corporation_id_mining_extractions(corporation_id)
 
-# Remove any extractions which finish in more than six days from now.
-extractions.delete_if { |ex| (ex.chunk_arrival_time - DateTime.now) > 6.0 }
+#
+# If configured, remove any extractions which finish too far in the future
+# to be interesting.
+#
+if (days = config[:days])
+  extractions.delete_if { |ex| (ex.chunk_arrival_time - DateTime.now) > days }
+end
 
 # Remove any extractions which aren't in the listed systems.
 system_names = universe_api.post_universe_ids(config[:systems]).systems
