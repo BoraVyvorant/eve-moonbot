@@ -30,6 +30,11 @@ The resulting refresh token goes into the
 
 ### Mining Configuration
 
+If present, the `days` configuration item is the number of days in the future
+an extraction must finish in order to be of interest; any extractions further
+in the future will be ignored. If `days` is absent, all extractions will be
+included.
+
 If present, the `systems` configuration item is a list of solar system names;
 the application will filter out any extractions happening in other systems.
 If `systems` is absent, all systems will be included.
