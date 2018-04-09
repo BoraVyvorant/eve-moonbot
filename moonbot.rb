@@ -1,3 +1,4 @@
+require 'active_support/core_ext/hash/indifferent_access'
 require 'date'
 require 'esi-client-bvv'
 require 'oauth2'
@@ -9,7 +10,7 @@ require 'yaml'
 # Load the configuration file named on the command line,
 # or 'config.yaml' by default.
 #
-config = YAML.load_file(ARGV[0] || 'config.yaml')
+config = YAML.load_file(ARGV[0] || 'config.yaml').with_indifferent_access
 
 #
 # Get an OAuth2 access token for ESI.

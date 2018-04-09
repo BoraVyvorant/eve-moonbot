@@ -5,30 +5,30 @@
 #
 # Configuration for Slack notifications.
 #
-:slack:
-  :webhook_url: 'REDACTED'
-  :defaults:
-    :channel: 'REDACTED'
-    :username: 'MoonBot'
-    :icon_emoji: ':first_quarter_moon_with_face:'
+slack:
+  webhook_url: 'REDACTED'
+  defaults:
+    channel: 'REDACTED'
+    username: 'MoonBot'
+    icon_emoji: ':first_quarter_moon_with_face:'
 
-:refresh_token: 'REDACTED'
+refresh_token: 'REDACTED'
 
-:client_id: 'REDACTED'
-:client_secret: 'REDACTED'
+client_id: 'REDACTED'
+client_secret: 'REDACTED'
 
 #
 # The number of days within which a future extraction has to occur
 # to be notified. If this configuration item is commented out or removed,
 # all extractions will be included.
 #
-:days: 6.0
+days: 6.0
 
 #
 # Manually maintained list of what's interesting at each moon.
 # If a moon isn't found here, the bot will use 'Unknown.' instead.
 #
-:minerals:
+minerals:
   'Boystin II - Moon 3': 'Coesite, Hemorphite, Crokite and Spodumain.'
   'Boystin V - Moon 1': 'Bitumens, Scordite and Arkonor.'
   'Boystin V - Moon 2': 'Coesite, Hemorphite, Ochre and Bistot.'
@@ -40,4 +40,4 @@
 # Restrict listings to specific named systems. If this configuration item is
 # commented out or removed, extractions in all systems will be included.
 #
-:systems: [Boystin]
+systems: [Boystin]
