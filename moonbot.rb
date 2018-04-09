@@ -5,7 +5,11 @@ require 'set'
 require 'slack-notifier'
 require 'yaml'
 
-config = YAML.load_file('config.yaml')
+#
+# Load the configuration file named on the command line,
+# or 'config.yaml' by default.
+#
+config = YAML.load_file(ARGV[0] || 'config.yaml')
 
 #
 # Get an OAuth2 access token for ESI.

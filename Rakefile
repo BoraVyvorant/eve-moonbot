@@ -3,5 +3,5 @@ task :cop do
 end
 
 task :default do
-  system 'bundle exec ruby moonbot.rb'
+  system 'bundle exec ruby moonbot.rb test-config.yaml'
 end
