@@ -89,14 +89,20 @@ attachments = extractions.map do |ex|
   moon = universe_api.get_universe_moons_moon_id(ex.moon_id)
   # Remove the system name from the start of the structure name
   structure_name = structure_p.name.sub(/^.* - /, '')
-  eve_time = ex.chunk_arrival_time.strftime('%A, %Y-%m-%d %H:%M:%S EVE time')
+  abs_time = ex.chunk_arrival_time.to_time.to_i
+  local_time = "<!date^#{abs_time}^{date_long} at {time}|x>"
+  eve_time = ex.chunk_arrival_time.strftime('%A, %Y-%m-%d %H:%M:%S')
   stuff = config[:minerals][moon.name] || 'Unknown.'
   {
-    title: structure_name.to_s,
+    title: "#{structure_name} (#{moon.name})",
     color: 'good',
-    text: "#{moon.name}\n#{eve_time}\n#{stuff}",
+    text: stuff,
     fallback: "#{ex.chunk_arrival_time.strftime('%A at %H:%M')} " \
               "at #{structure_name}",
+    fields: [
+      { title: 'Your local time', value: local_time, short: true },
+      { title: 'EVE time', value: eve_time, short: true }
+    ],
     thumb_url: "https://imageserver.eveonline.com/Render/#{structure.type_id}_128.png"
   }
 end
