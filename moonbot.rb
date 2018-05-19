@@ -105,8 +105,8 @@ attachments = extractions.map do |ex|
     fallback: "#{ex.chunk_arrival_time.strftime('%A at %H:%M')} " \
               "at #{structure_name}",
     fields: [
-      { title: 'Your local time', value: local_time, short: true },
-      { title: 'EVE time', value: eve_time, short: true }
+      { title: 'EVE time', value: eve_time, short: true },
+      { title: 'Your local time', value: local_time, short: true }
     ],
     thumb_url: "https://imageserver.eveonline.com/Render/#{structure.type_id}_128.png"
   }
