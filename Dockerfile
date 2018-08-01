@@ -23,6 +23,7 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle install --deployment --without=devel
 
 COPY moonbot.rb ./
+COPY lib        lib/
 
 #
 # Production image build using the slim Ruby image.
